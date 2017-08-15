@@ -1,2 +1,4 @@
-# todo_app
-todo app with react using redux
+author: Joga Commuri
+#To start app
+yarn install
+yarn start 

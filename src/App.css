@@ -1,0 +1,57 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  
+}
+
+.App-intro {
+  font-size: large;
+}
+.stock-form{
+  width:100%;
+}
+.container{
+  padding-top: 25px;
+}
+p {
+  font-size: 20px;
+}
+.profit{
+  color: green;
+}
+.loss{
+  color: red;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (min-width: 768px){
+  .modal-dialog {
+    width: 900px !important;
+    margin: 30px auto;
+  }
+}
+
+.Todo-App{
+  padding-top: 20px;
+  display: inline-block;
+  text-align: left;
+}
+input{
+  font-size: 20px;
+}
+ul{
+  padding: 0px;
+}
+li{
+  list-style: none;
+}
