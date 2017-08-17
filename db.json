@@ -13,7 +13,7 @@
     {
       "id": 5,
       "name": "Update Records",
-      "isComplete": true
+      "isComplete": false
     },
     {
       "name": "Yayy New todo",
@@ -22,7 +22,7 @@
     },
     {
       "name": "Another Todo",
-      "isComplete": true,
+      "isComplete": false,
       "id": 7
     },
     {
