@@ -1,34 +1,93 @@
 {
   "todos": [
     {
-      "id": 3,
-      "name": "Load data into App",
-      "isComplete": true
-    },
-    {
-      "id": 4,
-      "name": "Add Records",
-      "isComplete": false
-    },
-    {
-      "id": 5,
-      "name": "Update Records",
-      "isComplete": false
-    },
-    {
-      "name": "Yayy New todo",
-      "isComplete": false,
-      "id": 6
-    },
-    {
-      "name": "Another Todo",
-      "isComplete": false,
-      "id": 7
-    },
-    {
-      "name": "New Todo with Message",
+      "id": 1,
+      "name": "Michael Watkins",
+      "area": "Dermatology",
+      "specialty": "Immunodermatology",
+      "review": 4.1,
+      "img": "../assets/male_doctor.png",
+      "gender": "Male",
       "isComplete": true,
-      "id": 8
+      "longitude": "18.37222",
+      "latitude": "45.39889",
+      "contactNo": "(222)-230-3909",
+      "description": "I was born and raised in the Texas. I graduated from the University of the Texas School of Medicine, and did my Internal Medicine residency and Cardiovascular fellowship training at Rush-Presbyterian- Medical Center in Chicago, Illinois"
+    },
+    {
+      "id": 2,
+      "name": "Ashley Alexander",
+      "area": "Family Medicine",
+      "specialty": "Sports Medicine",
+      "review": 4.8,
+      "img": "../assets/female_doctor.jpg",
+      "gender": "Female",
+      "longitude": "-80.63333",
+      "latitude": "8.16667",
+      "isComplete": false,
+      "contactNo": "(123)-240-3219",
+      "description": "I completed all training required for both Internal Medicine and Dermatology.  I am board certified in both fields, although I practice only dermatology. I recently recertified in dermatology as part of my commitment to remaining up-to-date in my field."
+    },
+    {
+      "id": 3,
+      "name": "Gerald Howard",
+      "area": "Surgery",
+      "specialty": "Maxillofacial",
+      "review": 2.5,
+      "img": "../assets/male_doctor.png",
+      "gender": "Male",
+      "longitude": "7.9455",
+      "latitude": "49.0371",
+      "isComplete": false,
+      "contactNo": "(623)-532-9532",
+      "description": "I grew up in India and moved out to California for an internship at the Oakland Naval Hospital. My neurology residency was at the UC Davis East Bay program and was located at the VA Hospital in Martinez, California.  I worked at the Oakland Naval Hospital for three years to complete my Navy scholarship obligation."
+    },
+    {
+      "id": 6,
+      "name": "George Ruiz",
+      "area": "Dentistry",
+      "specialty": "Orthodontics",
+      "review": 3.6,
+      "img": "../assets/male_doctor.png",
+      "gender": "Male",
+      "longitude": "38.91667",
+      "latitude": "5.75",
+      "isComplete": false,
+      "contactNo": "(123)-240-3219",
+      "description": "I completed all training required for both Internal Medicine and Dermatology.  I am board certified in both fields, although I practice only dermatology. I recently recertified in dermatology as part of my commitment to remaining up-to-date in my field."
+    },
+    {
+      "id": 7,
+      "name": "Victor Harris",
+      "area": "Psychiatry",
+      "specialty": "Addiction Psychiatry",
+      "review": 2.9,
+      "img": "../assets/male_doctor.png",
+      "gender": "Male",
+      "longitude": "122.0853",
+      "latitude": "12.3134",
+      "isComplete": true,
+      "contactNo": "(123)-240-3219",
+      "description": "I was born and raised in the Texas. I graduated from the University of the Texas School of Medicine, and did my Internal Medicine residency and Cardiovascular fellowship training at Rush-Presbyterian- Medical Center in Chicago, Illinois."
+    },
+    {
+      "id": 8,
+      "name": "Mary Morales",
+      "area": "Dentistry",
+      "specialty": "Endodontics",
+      "review": 1.1,
+      "img": "../assets/female_doctor.jpg",
+      "gender": "Female",
+      "longitude": "125.70083",
+      "latitude": "6.14444",
+      "isComplete": true,
+      "contactNo": "(123)-240-3219",
+      "description": "I completed all training required for both Internal Medicine and Dermatology.  I am board certified in both fields, although I practice only dermatology. I recently recertified in dermatology as part of my commitment to remaining up-to-date in my field."
+    },
+    {
+      "name": "Joga Commuri",
+      "isComplete": false,
+      "id": 9
     }
   ]
 }
