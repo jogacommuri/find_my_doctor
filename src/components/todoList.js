@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Image, Row, Col} from 'react-bootstrap';
+import {Image, Col} from 'react-bootstrap';
 import {fetchTodos, toggleTodo, deleteTodo, getVisibleTodos} from '../reducers/todo'
 import Rater from 'react-rater';
 import Male from '../assets/male_doctor.png';
 import Female from '../assets/female_doctor.jpg';
 import 'react-rater/lib/react-rater.css';
 
-const TodoItem = ({id, name, area, img, specialty, isComplete, contactNo, description, review, gender,toggleTodo, deleteTodo})=>(
+const TodoItem = ({id, name, area, img, specialty, address, isComplete, contactNo, description, review, gender, toggleTodo, deleteTodo})=>(
 	<li> 
-		<Col xs={12} sm={12} md={4} lg={4} className="smallPod">
+		<Col xs={12} sm={12} md={5} lg={5} className="smallPod">
 			<span className="delete-item">
 				<button onClick={() => deleteTodo(id)}> REMOVE </button>
 			</span>
@@ -26,6 +26,7 @@ const TodoItem = ({id, name, area, img, specialty, isComplete, contactNo, descri
 					<p>Name: {name}</p>
 					<p>Area: {area}</p>
 					<p>Specialty: {specialty}</p>
+					<p>Address : {address} </p>
 					<p>{gender}</p>
 					<a>{contactNo}</a>
 				</span>
@@ -42,26 +43,61 @@ const TodoItem = ({id, name, area, img, specialty, isComplete, contactNo, descri
 		</Col>
 	</li>
 )
+
 class TodoList extends Component{
+	constructor(props) {
+	    super(props);
+	    this.state = {
+	       searchTerm: '',
+	       FinalSearchTerm: ''
+	    };
+	  }
+
 	componentDidMount(){
 		this.props.fetchTodos()
 	}
+
+	handleSearch = (evt) => {
+		evt.preventDefault()
+		//console.log(evt.target.value)
+		this.setState({searchTerm: evt.target.value})
+		console.log(this.state.searchTerm)
+	}
+	handleSubmit = (evt) =>{
+		evt.preventDefault()
+		this.setState({FinalSearchTerm: this.state.searchTerm})
+	}
 	render(){
 		return(
+
 			<div className="Todo-List">
 				<Col xs={2} sm={2} md={2} lg={2}>
 					<span>
 						Search :
 					</span>
-					<input type ="text" /> 
+					<form onSubmit={this.handleSubmit}>
+						<input type ="text"  onChange={this.handleSearch}/> 
+					</form>
 				</Col>
 				<Col xs={10} sm={10} md={10} lg={10}>
 				      <ul>
-				        {this.props.todos.map( todo => 
-				        	<TodoItem key={todo.id} 
-				        	toggleTodo={this.props.toggleTodo} 
-				        	deleteTodo={this.props.deleteTodo} 
-				        	{...todo} />)}
+				        {this.props.todos
+				        	.filter((val) => 	this.state.FinalSearchTerm && (val.specialty || val.area || val.gender || val.reviews || val.address)
+								? (((val.specialty.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 ) ||
+									(val.area.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 )||
+									(val.name.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 )||
+									(val.gender.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 ) ||
+									(val.review.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 ) ||
+									(val.address.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 )
+									)
+									? true 
+									: false)
+								:  true)
+				        	.map( todo => 
+					        	<TodoItem key={todo.id} 
+					        	toggleTodo={this.props.toggleTodo} 
+					        	deleteTodo={this.props.deleteTodo} 
+					        	{...todo} />)}
 				       
 				      </ul>
 			     </Col>
