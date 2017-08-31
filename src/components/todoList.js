@@ -88,7 +88,8 @@ class TodoList extends Component{
 									(val.name.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 )||
 									(val.gender.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 ) ||
 									(val.review.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 ) ||
-									(val.address.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 )
+									(val.address.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 ) ||
+									(val.contactNo.toString().toLowerCase().indexOf((this.state.FinalSearchTerm).toLowerCase()) > -1 )
 									)
 									? true 
 									: false)
