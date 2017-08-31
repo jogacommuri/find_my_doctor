@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {Image, Col} from 'react-bootstrap';
+import {Image, Row, Col} from 'react-bootstrap';
 import {fetchTodos, toggleTodo, deleteTodo, getVisibleTodos} from '../reducers/todo'
 import Rater from 'react-rater';
 import Male from '../assets/male_doctor.png';
@@ -11,7 +11,7 @@ const TodoItem = ({id, name, area, img, specialty, isComplete, contactNo, descri
 	<li> 
 		<Col xs={12} sm={12} md={4} lg={4} className="smallPod">
 			<span className="delete-item">
-				<button onClick={() => deleteTodo(id)}> X </button>
+				<button onClick={() => deleteTodo(id)}> REMOVE </button>
 			</span>
 			<input type ="checkbox" 
 				checked={isComplete} 
@@ -41,7 +41,6 @@ const TodoItem = ({id, name, area, img, specialty, isComplete, contactNo, descri
 			</Col>
 		</Col>
 	</li>
-	
 )
 class TodoList extends Component{
 	componentDidMount(){
@@ -50,14 +49,22 @@ class TodoList extends Component{
 	render(){
 		return(
 			<div className="Todo-List">
-		      <ul>
-		        {this.props.todos.map( todo => 
-		        	<TodoItem key={todo.id} 
-		        	toggleTodo={this.props.toggleTodo} 
-		        	deleteTodo={this.props.deleteTodo} 
-		        	{...todo} />)}
-		       
-		      </ul>
+				<Col xs={2} sm={2} md={2} lg={2}>
+					<span>
+						Search :
+					</span>
+					<input type ="text" /> 
+				</Col>
+				<Col xs={10} sm={10} md={10} lg={10}>
+				      <ul>
+				        {this.props.todos.map( todo => 
+				        	<TodoItem key={todo.id} 
+				        	toggleTodo={this.props.toggleTodo} 
+				        	deleteTodo={this.props.deleteTodo} 
+				        	{...todo} />)}
+				       
+				      </ul>
+			     </Col>
 		    </div>
 		)
 	}

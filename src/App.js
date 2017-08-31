@@ -22,7 +22,7 @@ class App extends Component {
         <Router>
           <Well>
             <Row>
-              <Col xs={12} sm={12} md={10} mdOffset={2} lg={12} lgOffset={2}>
+              <Col xs={12} sm={12} md={12} lg={12}>
                 <div className="Todo-App">
                   <Message />
                   <TodoForm />
